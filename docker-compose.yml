@@ -1,0 +1,61 @@
+# version: '3.8'
+
+# services:
+#   postgres:
+#     container_name: fastapi_project_postgres_1
+#     image: postgres
+#     restart: always
+#     ports:
+#       - "5435:5432"
+#     environment:
+#       POSTGRES_DB: fastdatabase
+#       POSTGRES_USER: postgres
+#       POSTGRES_PASSWORD: admin
+#     volumes:
+#       - postgres-data:/var/lib/postgresql/data
+
+#   fastapi:
+#     build:
+#       context: .
+#       dockerfile: Dockerfile
+#     container_name: fastapi_project_fastapi_1
+#     restart: always
+#     ports:
+#       - "8000:8000"
+#     depends_on:
+#       - postgres
+
+# volumes:
+#   postgres-data:
+
+
+version: '3.8'
+
+services:
+  postgres:
+    container_name: fastapi_project_postgres_1
+    image: postgres
+    restart: always
+    ports:
+      - "5435:5432"
+    environment:
+      POSTGRES_DB: fastdatabase
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+  fastapi:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: fastapi_project_fastapi_1
+    restart: always
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+
+volumes:
+  postgres-data:
+

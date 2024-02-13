@@ -1,0 +1,19 @@
+# Compiled python files
+__pycache__/
+*.pyc
+
+# Local development settings
+.env
+
+# Dependency directories
+venv/
+
+
+# FastAPI specific files
+__pycache__/
+pycache/
+.DS_Store
+
+# Database migrations
+alembic.ini
+alembic/versions/
