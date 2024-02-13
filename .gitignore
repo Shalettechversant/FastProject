@@ -15,5 +15,5 @@ pycache/
 .DS_Store
 
 # Database migrations
-alembic.ini
-alembic/versions/
+# alembic.ini
+# alembic/versions/
